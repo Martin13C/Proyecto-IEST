@@ -1,0 +1,749 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+
+a {
+    display: flex;
+    flex-wrap: nowrap;
+    text-decoration: none;
+}
+
+
+
+
+
+/* seccion del home */
+.inicio {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nuevo Navegacion */
+
+.menu {
+    width: 100%;
+    height: 15%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    padding: 10px 10px;
+    transition: all 0.3s ease;
+    background-color: black;
+    color: white;
+    align-content: center;
+
+}
+
+.menu-btn i {
+    font-size: 25px;
+    color: white;
+    margin-right: 10px;
+}
+
+.menu .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.acomodar-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+.logo-text {
+    font-weight: 500;
+    font-size: 5px;
+    letter-spacing: 3px;
+}
+
+.fuerte {
+    color: white;
+    font-weight: bolder;
+    font-size: 7px;
+    letter-spacing: 1px;
+
+}
+
+nav p {
+    color: white;
+}
+
+.menu .logo img {
+    width: 50px;
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+
+@media (min-width: 768px) {
+    .menu {
+        padding: 5px 10px;
+    }
+
+    .menu .logo img {
+        width: 60px;
+    }
+}
+
+.menu .menu-list {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    display: block;
+    margin-top: 0;
+    padding: 30px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .menu .menu-list {
+        display: flex;
+        margin: 0;
+        position: static;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        text-align: left;
+    }
+}
+
+
+.menu .menu-list.active {
+    left: 0%;
+}
+
+.icon.cancel-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 20px;
+}
+
+.menu-list li {
+    margin-top: 35px;
+    transition: all 300ms;
+}
+
+@media (min-width: 768px) {
+    .menu-list li {
+        list-style: none;
+        transition: all 300ms;
+        margin-top: 0;
+    }
+}
+
+.menu-list li a {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: 15px;
+    color: var(---blanco);
+}
+
+.menu-list li a:hover {
+    color: #42019e;
+}
+
+.menu-list li:hover {
+    transform: scale(1.1);
+}
+
+.icon {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .icon {
+        display: none;
+    }
+}
+
+.icon.hide {
+    display: none;
+}
+
+
+.inicio-f-t {
+    padding-top: 15vh;
+    background: rgb(23, 50, 161);
+    background: linear-gradient(87deg, rgb(38, 18, 138) 12%, rgb(68, 55, 90) 30%, rgba(94, 100, 124, 1) 56%, rgb(28, 29, 30) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+
+}
+
+.imagen {
+    margin-top: 20px;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/carousel/banner-02.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 10px black;
+}
+
+.text-titulo {
+    font-size: 10px;
+    width: 80%;
+    height: 40%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    text-shadow: 2px 2px 3px black;
+}
+
+
+
+
+/* secciones de proyectos  */
+.s-proyectos {
+    background-color: rgb(11, 11, 11);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200vh;
+    width: 100%;
+}
+
+.s-proyectos>h2 {
+    color: white;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    font-size: 15px;
+    padding: 10px;
+    font-weight: 300;
+    margin: 0 20px;
+}
+
+.proyectos {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    grid-template-areas:
+        "uno dos tres"
+        "uno cuatro tres"
+        "cinco cuatro ocho"
+        "siete seis ocho"
+        "once nueve dies"
+        "once doce catorce"
+        "trece doce quince"
+        "dieciocho dieciseis quince"
+        "diecisiete dieciseis veinte"
+        "diecisiete diecinueve veinte"
+    ;
+}
+
+.proyectos>a {
+    background-color: rgb(39, 1, 84);
+    flex-grow: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    font-size: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 800;
+
+}
+
+.proyect1 {
+    grid-area: uno;
+    background-image: url(img/proyectos/JMC-ecovida.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect2 {
+    grid-area: dos;
+    background-image: url(img/proyectos/Camila-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect3 {
+    grid-area: tres;
+    background-image: url(img/proyectos/Chavix-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect4 {
+    grid-area: cuatro;
+    background-image: url(img/proyectos/Ecovida-juan.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect5 {
+    grid-area: cinco;
+    background-image: url(img/proyectos/IEST-CARD.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect6 {
+    grid-area: seis;
+    background-image: url(img/proyectos/Marianela-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect7 {
+    grid-area: siete;
+    background-image: url(img/proyectos/Francis-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect8 {
+    grid-area: ocho;
+    background-image: url(img/proyectos/Francis-inflacion.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect9 {
+    grid-area: nueve;
+    background-image: url(img/proyectos/martin-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect10 {
+    grid-area: dies;
+    background-image: url(img/proyectos/JMC-ecovida2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect11 {
+    grid-area: once;
+    background-image: url(img/proyectos/Johana-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect12 {
+    grid-area: doce;
+    background-image: url(img/proyectos/Juan-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect13 {
+    grid-area: trece;
+    background-image: url(img/proyectos/Juanmpi-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect14 {
+    grid-area: catorce;
+    background-image: url(img/proyectos/Juego-prim3.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect15 {
+    grid-area: quince;
+    background-image: url(img/proyectos/Juli-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect16 {
+    grid-area: dieciseis;
+    background-image: url(img/proyectos/Laura-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect17 {
+    grid-area: diecisiete;
+    background-image: url(img/proyectos/Nahuel-Card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect18 {
+    grid-area: dieciocho;
+    background-image: url(img/proyectos/PaginaHallowen-fran.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect19 {
+    grid-area: diecinueve;
+    background-image: url(img/proyectos/Payo-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.proyect20 {
+    grid-area: veinte;
+    background-image: url(img/proyectos/Yani-card.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+/* seccion de plan de estudio */
+.p-d-e {
+    width: 100%;
+    height: 100vh;
+    background: rgb(23, 50, 161);
+    background: linear-gradient(87deg, rgb(38, 18, 138) 12%, rgb(68, 55, 90) 30%, rgba(94, 100, 124, 1) 56%, rgb(28, 29, 30) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.p-d-e>div {
+    background-color: none;
+    width: 100%;
+    height: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-d-e h2 {
+    border-bottom: 3px solid rgb(255, 255, 255);
+    font-size: 15px;
+    margin: 0 20px;
+    padding: 10px;
+    font-weight: 300;
+
+}
+
+.p-d-e ol {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.p-d-e li {
+    display: block;
+    width: 50%;
+    padding: 2px 0;
+    font-size: 8px;
+    font-weight: 200;
+}
+
+
+
+
+/* seccion de institucion  */
+.s-institucion {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(18, 17, 17);
+    display: flex;
+    flex-direction: column;
+}
+
+.s-institucion>h2 {
+    color: white;
+    margin: 0 20px;
+    padding: 10px;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.institucion {
+    margin: 15px;
+    flex-grow: 1;
+    background-color: rgb(18, 17, 17);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mapa {
+    height: 50%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: aquamarine;
+}
+
+.iest {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.logos {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logoiest,
+.logocarre {
+    background-color: aqua;
+    width: 85px;
+    height: 85px;
+    border-radius: 100px;
+    position: absolute;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.logoiest:hover,
+.logocarre:hover {
+    transform: scale(1.05);
+}
+
+.logocarre {
+    background-color: rgb(30, 3, 126);
+    background-image: url(img/logo-carrer2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    left: 20px;
+
+}
+
+.logoiest {
+    background-color: rgb(255, 255, 255);
+    background-image: url(img/iest-logo-2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+}
+
+.img-iest {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    opacity: 0.6;
+}
+
+.mapa {
+    background-image: url(img/mapa2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media(min-width: 768px) {
+
+    /* media queries para la seccion de imagen y texto del home  */
+    .inicio-f-t {
+        padding-top: 50px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .imagen {
+        width: 50%;
+        height: 70%;
+
+    }
+
+    .text-titulo {
+        font-size: 20px;
+        width: 40%;
+        height: 70%;
+
+    }
+
+    /* media queries para seccion de proyectos  */
+
+    .s-proyectos {
+        height: 250vh;
+    }
+
+    .s-proyectos>h2 {
+        font-size: 25px;
+        padding: 10px;
+        font-weight: 300;
+        margin: 0 20px;
+    }
+
+    .proyectos {
+        flex: 1;
+        width: 100%;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        justify-items: center;
+        align-items: center;
+        gap: 10px;
+        grid-template-areas:
+            "uno dos dos tres"
+            "uno dos dos cuatro"
+            "cinco cinco seis cuatro"
+            "cinco cinco seis nueve"
+            "siete ocho ocho nueve"
+            "siete ocho ocho dies"
+            "once doce doce trece"
+            "once doce doce catorce"
+            "quince quince dieciseis catorce"
+            "quince quince dieciseis diecinueve"
+            "diecisiete dieciocho dieciocho diecinueve"
+            "diecisiete dieciocho dieciocho veinte"
+        ;
+    }
+
+    /* seccion de plan de estudiio  */
+    .p-d-e {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center;
+            align-items: center; */
+    }
+
+    .p-d-e>div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .p-d-e h2 {
+        font-size: 25px;
+        padding: 10px;
+        font-weight: 300;
+        margin: 0 20px;
+
+
+    }
+
+    .p-d-e ol {
+        flex-direction: column;
+    }
+
+    .p-d-e li {
+        width: 100%;
+        padding: 5px 0;
+        font-size: 13px;
+        font-weight: 200;
+    }
+
+
+
+    /* seccion de institucion  */
+   
+    .s-institucion>h2 {
+        margin: 0 20px;
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .institucion {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .mapa {
+        height: 100%;
+        width: 50%;
+    }
+    .iest {
+        height: 100%;
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logos {
+        width: 50%;
+        height: 100%;
+        flex-direction: column;
+    }
+    .logocarre {
+        
+        z-index: 1;
+        left: 60px;
+    
+    }
+    .logoiest,
+    .logocarre {
+        width: 130px;
+        height: 130px;
+    }
+    .img-iest {
+        width: 100%;
+        height: 50%;
+    }
+
+}
